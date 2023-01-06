@@ -134,9 +134,12 @@ func insert(_ value: T, after node: Node<T>) {
 * 그림과 같이 특정 위치에 Node를 추가하기 위해서는 현재 위치하고 있는 Node의 next를 추가할 Node로 바꾸고 기존 Node가 참고하고 있던 next값을 추가 된 Node가 가지면 된다.
 
 * 값을 넣기 전
-<a href="https://ibb.co/QPVvDw0"><img src="https://i.ibb.co/v3W4Xn9/2023-01-07-12-12-29.png" alt="2023-01-07-12-12-29" border="0"></a>
+
+![](https://raw.githubusercontent.com/Rhode-park/data-structure-study/leonFather/image/linkedList_beforeInsert.png)
+
 * 값을 넣은 후 
-<a href="https://imgbb.com/"><img src="https://i.ibb.co/1QBgczc/2023-01-07-12-13-24.png" alt="2023-01-07-12-13-24" border="0"></a>
+
+![](https://raw.githubusercontent.com/Rhode-park/data-structure-study/leonFather/image/linkedList_afterInster.png)
 
 ### pop을 구현하기 전 defer란?
 > [defer-swift document]( https://docs.swift.org/swift-book/ReferenceManual/Statements.html)
