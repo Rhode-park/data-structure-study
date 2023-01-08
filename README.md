@@ -31,6 +31,7 @@
 
 ## 💻주차별 주제
 ### 1주차: Linked List
+[LinkedList](https://github.com/Rhode-park/data-structure-study/blob/riji/LinkedList/README.md)
 ### 2주차: Stack Data Structure, Queues
 ### 3주차: Recursion
 ### 4주차: Trees
