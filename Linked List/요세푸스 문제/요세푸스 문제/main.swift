@@ -38,13 +38,13 @@ struct LinkedList {
     }
     
     mutating func removeFirst() -> Int? {
-        defer {
-            self.tail?.next = self.head?.next
-            self.head = self.head?.next
-            self.head?.prev = self.tail
-        }
+        let returnHead = self.head
         
-        guard let value = self.head?.value else { return nil }
+        self.tail?.next = self.head?.next
+        self.head = self.head?.next
+        self.head?.prev = self.tail
+        
+        guard let value = returnHead?.value else { return nil }
         
         return value
     }
