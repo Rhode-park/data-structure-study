@@ -223,17 +223,17 @@ print(list)
             return pop()
         }
 
-        var previous = head
-        var current = head
+        var previous = head // 임의로 지정해준 값
+        var current = head // 임의로 지정해준 값
 
-        while let next = current.next {
-            previous = current
-            current = next
-        }
+        while let next = current.next { //10의 next 1
+            previous = current // 10이 previous가 되고
+            current = next // 1이 next
+        } // 위와같이 계속 돌다가 next가 nil 이면 current인 3으로 값이 빠져나옴 (while문을 돌지 않고)
 
-        previous.next = nil
-        self.tail = previous
-        return current.value
+        previous.next = nil // 3 = nil 
+        self.tail = previous // 1이 tail
+        return current.value // 출력문에서 확인차 return 해주는 것
     }
 ```
 - 만약 head가 없으면 nil 반환
@@ -254,15 +254,15 @@ print(list)
 
             node.next = node.next?.next
         }
-        return node.next?.value
+        return node.next?.value // 출력문에서 확인차 return 값 입력
     }
 
 ```
 **10(head) -> 1 -> 3(tail) -> nil**
 
 - 10의 next인 1을 지운다고 가정한다.
-- 우선 10의 next인 1이 존재하므로 1을 반환한다.
-- 1의 next가 tail 이라면 tail은 node가 된다.
-- 1의 next가 3이고 3이 tail 이므로 3이 node이다.
-- 3의 next가 3
+- 우선 10의 next인 1이 존재하므로 1을 반환한다. (큰 의미 없음)
+- 10의 next가 tail 이라면 tail은 node가 된다. 
+- 10의 next가 tail이 아니므로 10의 next가 next?.next이니깐 3이된다. 
+- 10 -> 1(제거) -> 3 -> nil 이된다.
 - [=== 참고링크](https://ios-development.tistory.com/393)
