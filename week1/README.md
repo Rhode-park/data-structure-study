@@ -323,3 +323,110 @@ print(list.count)
 
 </div>
 </details>
+
+<br>
+
+<details>
+<summary>1158번. 요세푸스 문제</summary>
+<div markdown="1">
+
+``` swift
+/*
+ 백준 1158: 요세푸스 문제
+ solved by 코낄이
+ 2023.01.10 01:00 ~ 02:10
+*/
+
+class Node {
+    var data: Int
+    var next: Node?
+    var prev: Node?
+    
+    init(_ data: Int) {
+        self.data = data
+    }
+}
+
+struct List {
+    var head: Node?
+    var isEmpty: Bool {
+        return head == nil
+    }
+    
+    
+    mutating func push(_ node: Node) {
+        guard !isEmpty else {
+            head = node
+            head?.next = head
+            head?.prev = head
+            return
+        }
+        
+        node.next = head
+        node.prev = head?.prev
+        head?.prev?.next = node
+        head?.prev = node
+        head = node
+    }
+    
+    mutating func pop() {
+        guard head?.next !== head else {
+            head = nil
+            head?.prev = nil
+            head?.next = nil
+            return
+        }
+        
+        head?.next?.prev = head?.prev
+        head?.prev?.next = head?.next
+        head = head?.next
+    }
+    
+    mutating func rotateLeft(for count: Int) {
+        guard count > 1 else {
+            return
+        }
+        for _ in 1..<count {
+            head = head?.next
+        }
+    }
+    
+    mutating func josephus(_ count: Int) -> [Int] {
+        var someArray: [Int] = []
+        
+        while self.isEmpty == false {
+            self.rotateLeft(for: count)
+            if let data = head?.data {
+                someArray.append(data)
+            }
+            self.pop()
+        }
+        
+        return someArray
+    }
+}
+
+var input = readLine()!.split(separator: " ").compactMap() {
+    Int($0)
+}
+
+var list = List()
+
+for i in 1...input[0] {
+    list.push(Node(input[0] - i + 1))
+}
+
+let josephusArray = list.josephus(input[1])
+
+print("<", terminator: "")
+for i in 0..<josephusArray.count {
+    if i == josephusArray.count - 1 {
+        print("\(josephusArray[i])", terminator: "")
+    } else {
+        print("\(josephusArray[i]), ", terminator: "")
+    }
+}
+print(">")
+```
+</div>
+</details>

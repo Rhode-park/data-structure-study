@@ -139,122 +139,220 @@
 //
 //
 
+///*
+// 백준 1021: 회전하는 큐
+// solved by 코낄이
+// 2023.01.09 21:00 ~ 2023.01.10 01:00
+//*/
+//
+//class Node<T> {
+//    var data: T
+//    var next: Node<T>?
+//    var prev: Node<T>?
+//
+//    init(data: T, next: Node<T>? = nil, prev: Node<T>? = nil) {
+//        self.data = data
+//        self.next = next
+//        self.prev = prev
+//    }
+//}
+//
+//struct List<T> {
+//    var head: Node<T>?
+//    var count = 0
+//
+//    mutating func push(data: Node<T>) {
+//        guard head != nil else {
+//            head = data
+//            head?.prev = head
+//            head?.next = head
+//            return
+//        }
+//
+//        data.next = head
+//        data.prev = head?.prev
+//        head?.prev?.next = data
+//        head?.prev = data
+//        head = data
+//    }
+//
+//    mutating func pop() {
+//        head?.next?.prev = head?.prev
+//        head?.prev?.next = head?.next
+//        head = head?.next
+//    }
+//
+//    mutating func rotateRight() {
+//        head = head?.prev
+//    }
+//
+//    mutating func rotateLeft() {
+//        head = head?.next
+//    }
+//
+//    mutating func countForSearchRight(for data: T) -> Int {
+//        var count = 0
+//
+//        while count < 50 &&
+//                head?.data as! Int != data as! Int {
+//            self.rotateRight()
+//            count += 1
+//        }
+//
+//        for _ in 0..<count {
+//            self.rotateLeft()
+//        }
+//
+//        return count
+//    }
+//
+//    mutating func countForSearchLeft(for data: T) -> Int {
+//        var count = 0
+//
+//        while count < 50 &&
+//                head?.data as! Int != data as! Int {
+//            self.rotateLeft()
+//            count += 1
+//        }
+//
+//        for _ in 0..<count {
+//            self.rotateRight()
+//        }
+//
+//        return count
+//    }
+//
+//    mutating func popTargetDataAndCount(for data: T) {
+//        let countRight = self.countForSearchRight(for: data)
+//        let countLeft = self.countForSearchLeft(for: data)
+//
+//        if countLeft > countRight {
+//            for _ in 0..<countRight {
+//                self.rotateRight()
+//                count += 1
+//            }
+//        } else {
+//            for _ in 0..<countLeft {
+//                self.rotateLeft()
+//                count += 1
+//            }
+//        }
+//
+//        self.pop()
+//    }
+//}
+//
+//var list = List<Int>()
+//
+//var firstInput = readLine()!.split(separator: " ").compactMap {
+//    Int($0) }
+//var secondInput = readLine()!.split(separator: " ").compactMap {
+//    Int($0) }
+//
+//for i in 1...firstInput[0] {
+//    list.push(data: Node(data: firstInput[0] + 1 - i))
+//}
+//
+//for target in secondInput {
+//    list.popTargetDataAndCount(for: target)
+//}
+//
+//print(list.count)
+
 /*
- 백준 1021: 회전하는 큐
+ 백준 1158: 요세푸스 문제
  solved by 코낄이
- 2023.01.09 21:00 ~ 2023.01.10 01:00
+ 2023.01.10 01:00 ~ 02:10
 */
 
-class Node<T> {
-    var data: T
-    var next: Node<T>?
-    var prev: Node<T>?
+class Node {
+    var data: Int
+    var next: Node?
+    var prev: Node?
     
-    init(data: T, next: Node<T>? = nil, prev: Node<T>? = nil) {
+    init(_ data: Int) {
         self.data = data
-        self.next = next
-        self.prev = prev
     }
 }
 
-struct List<T> {
-    var head: Node<T>?
-    var count = 0
+struct List {
+    var head: Node?
+    var isEmpty: Bool {
+        return head == nil
+    }
     
-    mutating func push(data: Node<T>) {
-        guard head != nil else {
-            head = data
-            head?.prev = head
+    
+    mutating func push(_ node: Node) {
+        guard !isEmpty else {
+            head = node
             head?.next = head
+            head?.prev = head
             return
         }
         
-        data.next = head
-        data.prev = head?.prev
-        head?.prev?.next = data
-        head?.prev = data
-        head = data
+        node.next = head
+        node.prev = head?.prev
+        head?.prev?.next = node
+        head?.prev = node
+        head = node
     }
     
     mutating func pop() {
+        guard head?.next !== head else {
+            head = nil
+            head?.prev = nil
+            head?.next = nil
+            return
+        }
+        
         head?.next?.prev = head?.prev
         head?.prev?.next = head?.next
         head = head?.next
     }
     
-    mutating func rotateRight() {
-        head = head?.prev
+    mutating func rotateLeft(for count: Int) {
+        guard count > 1 else {
+            return
+        }
+        for _ in 1..<count {
+            head = head?.next
+        }
     }
     
-    mutating func rotateLeft() {
-        head = head?.next
-    }
-    
-    mutating func countForSearchRight(for data: T) -> Int {
-        var count = 0
-
-        while count < 50 &&
-                head?.data as! Int != data as! Int {
-            self.rotateRight()
-            count += 1
-        }
+    mutating func josephus(_ count: Int) -> [Int] {
+        var someArray: [Int] = []
         
-        for _ in 0..<count {
-            self.rotateLeft()
-        }
-        
-        return count
-    }
-    
-    mutating func countForSearchLeft(for data: T) -> Int {
-        var count = 0
-
-        while count < 50 &&
-                head?.data as! Int != data as! Int {
-            self.rotateLeft()
-            count += 1
-        }
-        
-        for _ in 0..<count {
-            self.rotateRight()
-        }
-        
-        return count
-    }
-    
-    mutating func popTargetDataAndCount(for data: T) {
-        let countRight = self.countForSearchRight(for: data)
-        let countLeft = self.countForSearchLeft(for: data)
-        
-        if countLeft > countRight {
-            for _ in 0..<countRight {
-                self.rotateRight()
-                count += 1
+        while self.isEmpty == false {
+            self.rotateLeft(for: count)
+            if let data = head?.data {
+                someArray.append(data)
             }
-        } else {
-            for _ in 0..<countLeft {
-                self.rotateLeft()
-                count += 1
-            }
+            self.pop()
         }
         
-        self.pop()
+        return someArray
     }
 }
 
-var list = List<Int>()
-
-var firstInput = readLine()!.split(separator: " ").compactMap {
-    Int($0) }
-var secondInput = readLine()!.split(separator: " ").compactMap {
-    Int($0) }
-
-for i in 1...firstInput[0] {
-    list.push(data: Node(data: firstInput[0] + 1 - i))
+var input = readLine()!.split(separator: " ").compactMap() {
+    Int($0)
 }
 
-for target in secondInput {
-    list.popTargetDataAndCount(for: target)
+var list = List()
+
+for i in 1...input[0] {
+    list.push(Node(input[0] - i + 1))
 }
 
-print(list.count)
+let josephusArray = list.josephus(input[1])
+
+print("<", terminator: "")
+for i in 0..<josephusArray.count {
+    if i == josephusArray.count - 1 {
+        print("\(josephusArray[i])", terminator: "")
+    } else {
+        print("\(josephusArray[i]), ", terminator: "")
+    }
+}
+print(">")
+
