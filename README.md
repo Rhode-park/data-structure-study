@@ -32,7 +32,17 @@
 ## 💻주차별 주제
 ### 1주차: Linked List
 * [LinkedList](https://github.com/Rhode-park/data-structure-study/tree/leonFather/Linked%20List)
+* 문제
+1. [1021-회전하는큐](https://www.acmicpc.net/problem/1021)
+2. [1158-요세푸스 문제](https://www.acmicpc.net/problem/1158)
+
 ### 2주차: Stack Data Structure, Queues
+* 
+* 문제
+1. [10828-스택](https://www.acmicpc.net/problem/10828)
+2. [10845-큐](https://www.acmicpc.net/problem/10845)
+3. [17608-막대기](https://www.acmicpc.net/problem/17608)
+4. [2164-카드2](https://www.acmicpc.net/problem/2164)
 ### 3주차: Recursion
 ### 4주차: Trees
 ### 5주차: Binary Trees
