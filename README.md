@@ -38,7 +38,7 @@
 ### 6주차: Binary Search Trees
 ### 7주차: Binary Search
 ### 8주차: Sorting Algorithms ❗️
-### 9주차: Graphs
+### 9주차: Graphs ❗️
 
 <br/>
 
