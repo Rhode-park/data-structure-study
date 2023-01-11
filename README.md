@@ -31,13 +31,13 @@
 
 ## 💻주차별 주제
 ### 1주차: Linked List
-### 2주차: Stack Data Structure, Queues
+### 2주차: Stack Data Structure, Queues ❗️
 ### 3주차: Recursion
-### 4주차: Trees
-### 5주차: Binary Trees
+### 4주차: Trees ❗️
+### 5주차: Binary Trees ❗️
 ### 6주차: Binary Search Trees
 ### 7주차: Binary Search
-### 8주차: Sorting Algorithms
+### 8주차: Sorting Algorithms ❗️
 ### 9주차: Graphs
 
 <br/>
