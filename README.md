@@ -33,6 +33,7 @@
 ### 1주차: Linked List
 [LinkedList](https://github.com/Rhode-park/data-structure-study/blob/riji/LinkedList/README.md)
 ### 2주차: Stack Data Structure, Queues
+[Stack&Queue 문제풀이](https://github.com/Rhode-park/data-structure-study/tree/riji/Stack%26Queue)
 ### 3주차: Recursion
 ### 4주차: Trees
 ### 5주차: Binary Trees
