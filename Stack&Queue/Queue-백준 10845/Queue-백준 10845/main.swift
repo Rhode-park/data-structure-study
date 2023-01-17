@@ -77,3 +77,14 @@ for _ in 0..<n {
         continue
     }
 }
+//
+//  main.swift
+//  Queue-백준 10845
+//
+//  Created by jiye Yi on 2023/01/18.
+//
+
+import Foundation
+
+print("Hello, World!")
+

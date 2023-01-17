@@ -1,3 +1,5 @@
+
+
 struct Stack {
     private var storage: [Int] = []
 
@@ -59,3 +61,14 @@ for _ in 0..<n {
         continue
     }
 }
+//
+//  main.swift
+//  Stack-백준 10828
+//
+//  Created by jiye Yi on 2023/01/18.
+//
+
+import Foundation
+
+print("Hello, World!")
+
