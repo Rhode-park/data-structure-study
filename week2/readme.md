@@ -169,4 +169,5 @@ print(cardStack[headPointer == 0 ? headPointer : headPointer - 1])
 </details>
 
 <img src="https://i.imgur.com/CqIbIHC.png" width="350"/>
-<br>[개발자 소들이 - Swift) 큐(Queue) 구현 해보기](https://babbab2.tistory.com/84)
+<br>
+[개발자 소들이 - Swift) 큐(Queue) 구현 해보기](https://babbab2.tistory.com/84)
