@@ -269,7 +269,7 @@ class Node {
     var data: Int
     var next: Node?
     var prev: Node?
-    
+
     init(_ data: Int) {
         self.data = data
     }
@@ -280,8 +280,8 @@ struct List {
     var isEmpty: Bool {
         return head == nil
     }
-    
-    
+
+
     mutating func push(_ node: Node) {
         guard !isEmpty else {
             head = node
@@ -289,14 +289,14 @@ struct List {
             head?.prev = head
             return
         }
-        
+
         node.next = head
         node.prev = head?.prev
         head?.prev?.next = node
         head?.prev = node
         head = node
     }
-    
+
     mutating func pop() {
         guard head?.next !== head else {
             head = nil
@@ -304,12 +304,12 @@ struct List {
             head?.next = nil
             return
         }
-        
+
         head?.next?.prev = head?.prev
         head?.prev?.next = head?.next
         head = head?.next
     }
-    
+
     mutating func rotateLeft(for count: Int) {
         guard count > 1 else {
             return
@@ -318,10 +318,10 @@ struct List {
             head = head?.next
         }
     }
-    
+
     mutating func josephus(_ count: Int) -> [Int] {
         var someArray: [Int] = []
-        
+
         while self.isEmpty == false {
             self.rotateLeft(for: count)
             if let data = head?.data {
@@ -329,7 +329,7 @@ struct List {
             }
             self.pop()
         }
-        
+
         return someArray
     }
 }
