@@ -42,9 +42,7 @@ let n = Int(readLine()!)!
 var stack = Stack()
 
 for _ in 0..<n {
-    let input = readLine()!.split(separator: " ").map{ element in
-        return String(element)
-    }
+    let input = readLine()!.split(separator: " ").map{ String($0) }
     
     switch input[0] {
     case "push":
@@ -61,14 +59,4 @@ for _ in 0..<n {
         continue
     }
 }
-//
-//  main.swift
-//  Stack-백준 10828
-//
-//  Created by jiye Yi on 2023/01/18.
-//
-
-import Foundation
-
-print("Hello, World!")
 
