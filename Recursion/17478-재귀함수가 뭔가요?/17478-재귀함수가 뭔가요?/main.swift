@@ -17,38 +17,31 @@ let firstAnswer = #""재귀함수는 자기 자신을 호출하는 함수라네"
 let secondAnswer = "라고 답변하였지."
 let underBar = "____"
 
-func printUnderBar(n: Int) {
+func printSentence(n: Int, sentence: String) {
     for _ in 0..<n {
         print(underBar, terminator: "")
     }
+    print(sentence)
 }
 
 func printRecursion(number: Int = 0, target: Int) {
     
     if number != target {
-        printUnderBar(n: number)
-        print(secondParagraph)
-        printUnderBar(n: number)
-        print(thirdParagraph)
-        printUnderBar(n: number)
-        print(fourthParagraph)
-        printUnderBar(n: number)
-        print(fifthParagraph)
+        printSentence(n: number, sentence: secondParagraph)
+        printSentence(n: number, sentence: thirdParagraph)
+        printSentence(n: number, sentence: fourthParagraph)
+        printSentence(n: number, sentence: fifthParagraph)
     } else {
-        printUnderBar(n: number)
-        print(secondParagraph)
-        printUnderBar(n: number)
-        print(firstAnswer)
-        printUnderBar(n: number)
-        print(secondAnswer)
+        printSentence(n: number, sentence: secondParagraph)
+        printSentence(n: number, sentence: firstAnswer)
+        printSentence(n: number, sentence: secondAnswer)
         
         return
     }
     
     printRecursion(number: number+1, target: target)
     
-    printUnderBar(n: number)
-    print(secondAnswer)
+    printSentence(n: number, sentence: secondAnswer)
     
 }
 
