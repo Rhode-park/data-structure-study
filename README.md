@@ -35,6 +35,7 @@
 ### 2주차: Stack Data Structure, Queues
 [Stack&Queue 문제풀이](https://github.com/Rhode-park/data-structure-study/tree/riji/Stack%26Queue)
 ### 3주차: Recursion
+[재귀함수](https://github.com/Rhode-park/data-structure-study/blob/riji/재귀함수/재귀함수.md)
 ### 4주차: Trees
 ### 5주차: Binary Trees
 ### 6주차: Binary Search Trees
