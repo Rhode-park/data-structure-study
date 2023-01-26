@@ -18,10 +18,10 @@ var message: [String] = ["어느 한 컴퓨터공학과 학생이 유명한 교�
                          "라고 답변하였지."]
 
 print(message[0])
-factorial(0)
+recursion(0)
 
 
-func factorial(_ number: Int) {
+func recursion(_ number: Int) {
     print(String(repeating: line, count: number) + message[1])
     
     if number == n {
@@ -34,7 +34,7 @@ func factorial(_ number: Int) {
     print(String(repeating: line, count: number) + message [3])
     print(String(repeating: line, count: number) + message [4])
     
-    factorial(number + 1)
+    recursion(number + 1)
     
     print(String(repeating: line, count: number) + message [6])
 }
