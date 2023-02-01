@@ -33,8 +33,6 @@ class Node {
     }
     
     func DFS(_ visit: (Node) -> Void) {
-        //Node.visitedNode.append(self.data)
-        
         visit(self)
         
         connections.forEach {
@@ -45,7 +43,6 @@ class Node {
     }
     
     func BFS(_ visit: (Node) -> Void) {
-        //Node.visitedNode.append(self.data)
         visit(self)
         
         var queue = Queue<Node>()
@@ -56,7 +53,6 @@ class Node {
         
         while let node = queue.dequeue() {
             if !Node.visitedNode.contains(node.data) {
-                //Node.visitedNode.append(self.data)
                 visit(node)
                 node.connections.forEach { queue.enqueue($0) }
             }
