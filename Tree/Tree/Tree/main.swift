@@ -23,7 +23,7 @@ struct Queue<Element> {
     }
 }
 
-class TreeNode<T> where T: Equatable {
+class TreeNode<T: Equatable> {
     var value: T
     var children: [TreeNode] = []
     
