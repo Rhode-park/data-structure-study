@@ -125,5 +125,13 @@ func remove(from data: T) -> Bool {
     changeNode.left = deleteNode.left
     changeNode.right = deleteNode.right
 
-    return tru
+    return true
 }
+
+
+/*
+    10
+     \
+      30
+      /
+ */
