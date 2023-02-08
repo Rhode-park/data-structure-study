@@ -40,7 +40,7 @@ class TreeNode {
     }
 }
 
-let N: Int = Int(readLine()!)!
+let N: Int = (readLine()?.components(separatedBy: " ").compactMap{ Int($0) }[0])!
 var treeNodes = [TreeNode]()
 var alphabet = "A"
 
