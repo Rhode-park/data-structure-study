@@ -51,7 +51,6 @@ for _ in 0..<N {
     alphabet = String(UnicodeScalar(unicode)!)
 }
 
-
 for _ in 0..<N {
     let input: [String] = (readLine()?.components(separatedBy: " ").compactMap{ String($0) })!
     
@@ -83,4 +82,3 @@ print()
 treeNodes[0].traversePostOrder {
     print($0.value, terminator: "")
 }
-
