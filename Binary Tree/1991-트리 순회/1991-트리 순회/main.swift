@@ -69,20 +69,14 @@ for _ in 0..<n {
 }
 
 trees[0].preorderTraversal { value in
-    if value != "." {
-        print(value, terminator: "")
-    }
+    print(value, terminator: "")
 }
 print()
 trees[0].inorderTraversal { value in
-    if value != "." {
-        print(value, terminator: "")
-    }
+    print(value, terminator: "")
 }
 print()
 trees[0].postorderTraversal { value in
-    if value != "." {
-        print(value, terminator: "")
-    }
+    print(value, terminator: "")
 }
 print()
