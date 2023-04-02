@@ -48,6 +48,7 @@ func printFinalStory() {
 }
 
 func printRecursiveStory() {
+    let l = n
     for _ in 0..<n-m {
         print("____", terminator: "")
     }
@@ -70,7 +71,7 @@ func printRecursiveStory() {
     } else {
         printFinalStory()
     }
-    for _ in 0..<n-m {
+    for _ in 0..<n-l {
         print("____", terminator: "")
     }
     print(story6)
@@ -78,7 +79,7 @@ func printRecursiveStory() {
 
 print(story0)
 printRecursiveStory()
-print(story6)
+//print(story6)
 
 
 /*
